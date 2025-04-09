@@ -1,3 +1,9 @@
+My Findings after research
+The Health & Fitness Tracker is a Python app that helps users track their workouts and meals. It uses the Nutritionix API to make meal and exercise logging easy, and even supports speech recognition for hands-free data entry. The app includes features like habit tracking, visual progress charts, and email reminders. To set it up, you simply clone the repo, create a conda environment, install the necessary dependencies, configure some environment variables, and you're ready to go! It's a great starting point for building a fitness tracker with user-friendly features.
+  
+  
+  
+  
   Project Roadmap – My Health Buddy 
 
 ##  Sprint 1
