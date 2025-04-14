@@ -31,7 +31,7 @@ def log_exercise():
     data["exercise_logs"].append(entry)
     save_data(data)
 
-    print("\n✅ Exercise logged successfully!")
+    print("\n Exercise logged successfully!")
 
 def view_logs():
     print("\n--- Exercise Logs ---")
@@ -52,10 +52,10 @@ def main():
         elif choice == "2":
             view_logs()
         elif choice == "3":
-            print("👋 Goodbye!")
+            print("Goodbye!")
             break
         else:
-            print("❌ Invalid option. Please try again.")
+            print("Invalid option. Please try again.")
 
 if __name__ == "__main__":
     main()
