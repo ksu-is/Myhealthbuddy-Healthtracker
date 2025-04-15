@@ -26,21 +26,27 @@ The Health & Fitness Tracker is a Python app that helps users track their workou
 ---
 
 ## Sprint 2
+### Focus:
+- Start building the core functionality of the app
+- Use GitHub for version control (at least 6 commits per person)
+- Track visible progress in GitHub and roadmap
 
-**Goal**: Build the core tracking functionality.
+### Tasks:
+- [x] Set up `main.py` for logging exercises
+- [x] Create `data/health_data.json` file to store exercise logs
+- [ ] Test exercise logger with sample entries
+- [ ] Begin validating user input (type, duration, notes)
+- [ ] Research how to add simple terminal menu navigation
+- [ ] Update README with usage instructions for exercise logging
+- [ ] Make at least 6 meaningful Git commits with clear messages
 
-- [ ] Implement user registration/login (Firebase or local)
-- [ ] Build Exercise Logging (type, duration, date)
-- [ ] Add Sleep Tracker (log + visual trends)
-- [ ] Add Hydration Tracker (daily goal + log)
-- [ ] Add Mental Health Check-in (mood + notes)
-- [ ] Set up simple goal tracking system
-
----
+### Notes:
+- Exercise logging is now functional!
+- Next up: input validation and improving the user experience
 
 ## Sprint 3
 
-**Goal**: Complete advanced features and integrate UI visualizations.
+Complete advanced features and integrate UI visualizations.
 
 - [ ] Integrate Nutritionix/Open Food Facts API for food logging
 - [ ] Enable macro/calorie tracking
