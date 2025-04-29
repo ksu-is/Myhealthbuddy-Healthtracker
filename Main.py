@@ -6,7 +6,12 @@ DATA_FILE = "data/health_data.json"
 
 def load_data():
     if not os.path.exists(DATA_FILE):
-        return {"exercise_logs": []}
+        return {
+            "exercise_logs": [],
+            "sleep_logs": [],
+            "hydration_logs": [],
+            "mood_logs": []
+        }
     with open(DATA_FILE, "r") as f:
         return json.load(f)
 
@@ -30,28 +35,73 @@ def log_exercise():
     data = load_data()
     data["exercise_logs"].append(entry)
     save_data(data)
+    print("Exercise logged!")
 
-    print("\n Exercise logged successfully!")
+def log_sleep():
+    print("\n--- Log Sleep ---")
+    hours = input("How many hours did you sleep?: ")
+    quality = input("Sleep quality (e.g., good, average, poor): ")
 
-def view_logs():
-    print("\n--- Exercise Logs ---")
+    entry = {
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "hours": hours,
+        "quality": quality
+    }
+
     data = load_data()
-    for entry in data.get("exercise_logs", []):
-        print(f"{entry['date']} - {entry['type']} for {entry['duration']} min | Notes: {entry['notes']}")
+    data["sleep_logs"].append(entry)
+    save_data(data)
+    print("Sleep logged!")
+
+def log_hydration():
+    print("\n--- Log Hydration ---")
+    glasses = input("How many glasses of water did you drink today?: ")
+
+    entry = {
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "glasses": glasses
+    }
+
+    data = load_data()
+    data["hydration_logs"].append(entry)
+    save_data(data)
+    print("Hydration logged!")
+
+def log_mood():
+    print("\n--- Mood Check-In ---")
+    mood = input("How are you feeling today (e.g., happy, stressed, tired)?: ")
+    notes = input("Anything you'd like to note? (press Enter to skip): ")
+
+    entry = {
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "mood": mood,
+        "notes": notes
+    }
+
+    data = load_data()
+    data["mood_logs"].append(entry)
+    save_data(data)
+    print("Mood logged!")
 
 def main():
     while True:
-        print("\nMy Health Buddy - Exercise Tracker")
+        print("\nMy Health Buddy - Wellness Tracker")
         print("1. Log Exercise")
-        print("2. View Logs")
-        print("3. Exit")
-        choice = input("Choose an option (1-3): ")
+        print("2. Log Sleep")
+        print("3. Log Hydration")
+        print("4. Mood Check-In")
+        print("5. Exit")
+        choice = input("Choose an option (1-5): ")
 
         if choice == "1":
             log_exercise()
         elif choice == "2":
-            view_logs()
+            log_sleep()
         elif choice == "3":
+            log_hydration()
+        elif choice == "4":
+            log_mood()
+        elif choice == "5":
             print("Goodbye!")
             break
         else:
